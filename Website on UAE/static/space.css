@@ -1,0 +1,111 @@
+/* SPACE BACKGROUND */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: url('/static/space-background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Twinkling Stars effect (optional if you want simple extra magic) */
+.stars {
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow:
+        1000px 800px white,
+        400px 600px white,
+        300px 500px white,
+        800px 200px white,
+        1200px 100px white;
+    animation: blink 2s infinite alternate;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes blink {
+    from { opacity: 1; }
+    to { opacity: 0.2; }
+}
+
+/* PAGE HEADER */
+.page-header {
+    text-align: center;
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 2px solid #00ffff;
+}
+
+.page-header h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #00ffff;
+}
+
+.page-header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #d0f0ff;
+}
+
+/* TIMELINE */
+.space-timeline {
+    width: 90%;
+    max-width: 1000px;
+    margin: 60px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.space-item {
+    background: rgba(0, 0, 50, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #00ffff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px #00ffff;
+    transition: transform 0.4s;
+}
+
+.space-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #00ffff;
+}
+
+.year {
+    font-size: 2em;
+    color: #00ffff;
+    margin-bottom: 10px;
+}
+
+.content h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #ffd700;
+}
+
+.content p {
+    font-size: 1.3em;
+    margin-top: 10px;
+    color: #d0f0ff;
+}
+
+/* ROCKET UPWARDS EFFECT (Optional Extra) */
+.space-item::after {
+    content: '🚀';
+    font-size: 2em;
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    animation: flyup 3s infinite alternate;
+}
+
+@keyframes flyup {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}

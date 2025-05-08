@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Golden Past | Discover UAE</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/static/golden.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Scheherazade&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Sand Particle Canvas -->
+<canvas id="sandstorm"></canvas>
+
+<!-- Page Header -->
+<div class="page-header" data-aos="fade-down">
+  <h1>The Golden Past of UAE ✨</h1>
+  <p>Travel through time — from the Bedouin era to the rise of the Emirates.</p>
+</div>
+
+<!-- Timeline -->
+<div class="timeline">
+  <div class="timeline-item left" data-aos="fade-right">
+    <div class="timeline-year">7th Century</div>
+    <div class="timeline-content">
+      <img src="static/images/7th-century.jpg" alt="Islam Spread" class="timeline-img">
+      <p>Islam spreads across the region, laying the foundation of cultural and spiritual life. In the 7th century, Islam spread to the region now known as the UAE through the efforts of Prophet Muhammad’s envoys and the early Muslim Caliphate. Many local tribes, such as the Bani Yas and Al Azd, accepted Islam during or shortly after the Prophet's lifetime. After his death in 632 CE, some tribes rebelled, leading to the Battle of Dibba—a key event where Muslim forces defeated the opposition and solidified Islamic rule in the area. By the mid-7th century, the UAE was part of the Islamic Caliphate, with Islamic beliefs, laws, and culture firmly established through trade, tribal alliances, and military campaigns.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item right" data-aos="fade-left">
+    <div class="timeline-year">1820</div>
+    <div class="timeline-content">
+      <img src="static/images/1820-treaty.jpg" alt="Treaty Signing" class="timeline-img">
+      <p>General Maritime Treaty signed with Britain — securing peace for the trading coast.In 1820, the General Maritime Treaty was signed between the British government and the rulers of the coastal tribes of the southeastern Arabian Peninsula, including areas of present-day UAE. This treaty aimed to end piracy in the Persian Gulf and ensure safe maritime trade routes. It marked the beginning of a series of agreements that led to the region being known as the Trucial States, securing British protection and bringing long-term peace and stability to the vital trading coast.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item left" data-aos="fade-right">
+    <div class="timeline-year">1958</div>
+    <div class="timeline-content">
+      <img src="static/images/oil-discovery.jpg" alt="Oil Discovery" class="timeline-img">
+      <p>The discovery of oil in Abu Dhabi in 1958 marked the beginning of a major economic transformation for the region. Commercial oil exports began in 1962, bringing rapid development and prosperity. This newfound wealth funded infrastructure, healthcare, and education, turning Abu Dhabi—and eventually the entire UAE—from a small trading and pearling economy into one of the world’s most dynamic and modern nations.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item right" data-aos="fade-left">
+    <div class="timeline-year">1971</div>
+    <div class="timeline-content">
+      <img src="static/images/uae-union.jpg" alt="UAE Union" class="timeline-img">
+      <p>On December 2, 1971, the United Arab Emirates (UAE) was officially formed as a union of seven emirates: Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, and Fujairah. Ras Al Khaimah joined shortly after in February 1972. Led by Sheikh Zayed bin Sultan Al Nahyan, the founding father and first President, this unification marked a historic moment of cooperation, laying the foundation for a strong, prosperous, and modern nation.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item left" data-aos="fade-right">
+    <div class="timeline-year">1980s</div>
+    <div class="timeline-content">
+      <img src="static/images/infrastructure.jpg" alt="Infrastructure Boom" class="timeline-img">
+      <p>Following the formation of the UAE, the country experienced a massive infrastructure boom, especially from the 1980s onward. Fueled by oil revenues and visionary leadership, the UAE rapidly developed modern cities, world-class airports, ports, highways, and public services. Iconic landmarks like Burj Khalifa, Dubai International Airport, and Jebel Ali Port symbolized its rise as a global hub for business, tourism, and trade, connecting the East and West like never before.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item right" data-aos="fade-left">
+    <div class="timeline-year">2000s</div>
+    <div class="timeline-content">
+      <img src="static/images/global-hub.jpg" alt="Global Hub" class="timeline-img">
+      <p>UAE becomes a global hub for business, culture, and innovation. In recent decades, the UAE has emerged as a global hub for business, culture, and innovation. With cities like Dubai and Abu Dhabi leading the way, the country has attracted international companies, hosted world expos, launched space missions, and built cutting-edge cultural landmarks like the Louvre Abu Dhabi. Strategic investments in technology, renewable energy, education, and infrastructure have positioned the UAE as a leader in the Middle East and a key player on the world stage.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Oasis Popup -->
+<div id="golden-oasis-popup">
+  <div class="popup-content">
+    <h2>🏝️ You Discovered the Golden Oasis! ✨</h2>
+    <p>Journey deeper into the Golden Past...</p>
+    <button id="continue-btn">Continue Journey 🌟</button>
+  </div>
+</div>
+
+<!-- Background Music (optional) -->
+<audio id="background-music" src="/static/audio/desert-theme.mp3" loop></audio>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="/static/sandstorm.js"></script>
+
+<script>
+  AOS.init({ duration: 1200, once: true });
+
+  // Show Oasis popup after page loads
+  window.addEventListener('load', function () {
+    setTimeout(() => {
+      document.getElementById('golden-oasis-popup').style.display = 'flex';
+    }, 500);
+  });
+
+  // Welcome voice message
+  function speakWelcome() {
+    const welcomeText = "Discover the vibrant heart of the UAE through its breathtaking festivals, bold innovations, and cultural treasures that unite tradition with tomorrow.";
+    const msg = new SpeechSynthesisUtterance(welcomeText);
+    msg.lang = "en-US";
+    msg.volume = 1;
+    msg.rate = 0.85;
+    msg.pitch = 1.0;
+
+    const voices = speechSynthesis.getVoices();
+    if (voices.length > 0) {
+      msg.voice = voices.find(voice => voice.name.includes('Google') || voice.lang.includes('en')) || voices[0];
+    }
+
+    msg.onend = function () {
+      const music = document.getElementById('background-music');
+      if (music) {
+        music.volume = 0.4;
+        music.play();
+      }
+    };
+
+    window.speechSynthesis.speak(msg);
+  }
+
+  // Ensure voices are loaded before speaking
+  function ensureVoicesAndSpeak() {
+    if (speechSynthesis.getVoices().length === 0) {
+      speechSynthesis.onvoiceschanged = speakWelcome;
+    } else {
+      speakWelcome();
+    }
+  }
+
+  // When "Continue Journey" is clicked
+  document.getElementById('continue-btn').addEventListener('click', () => {
+    document.getElementById('golden-oasis-popup').style.display = 'none';
+    ensureVoicesAndSpeak();
+  });
+</script>
+
+</body>
+</html>

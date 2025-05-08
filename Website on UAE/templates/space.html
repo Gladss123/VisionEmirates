@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAE's Journey to the Stars 🚀</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='space.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Space Background -->
+<div class="stars"></div>
+
+<div class="page-header" data-aos="fade-down">
+    <h1>UAE's Journey to the Stars ✨</h1>
+    <p>From desert sands to distant planets, the Emirati spirit soars!</p>
+</div>
+
+<!-- Space Achievements Timeline -->
+<div class="space-timeline">
+
+    <div class="space-item" data-aos="fade-up">
+        <div class="year">2006</div>
+        <div class="content">
+            <h3>Mohammed bin Rashid Space Centre</h3>
+            <p>Establishment of the UAE’s ambitious space agency: 🚀</p>
+             <p> The Mohammed Bin Rashid Space Centre (MBRSC), established in 2006, is a leading scientific and technological hub driving the UAE’s leadership in space services and exploration. MBRSC has grown to become the incubator of the UAE National Space Programme, fostering scientific research, innovation and building a sustainable space sector in the UAE. MBRSC is committed to innovation, collaboration, and excellence in all aspects of space exploration and development.</p>
+        </div>
+    </div>
+
+    <div class="space-item" data-aos="fade-up">
+        <div class="year">2013</div>
+        <div class="content">
+            <h3>DubaiSat-2 Launch</h3>
+            <p>First high-resolution imaging satellite launched into orbit 🛰️</p>
+            <p>DubaiSat-2 is the second Earth observation satellite of United Arab Emirates Institution for Advanced Science and Technology (EIAST).
+                The DubaiSat-2 project is a joint development programme between EIAST and SatrecI of South Korea, in which 16 UAE engineers have been working on the design, development, testing and manufacturing of the satellite. A Hall Effect Propulsion System (HEPS) is installed for orbit control and maintenance. Accurate and agile three-axis attitude control supports precise imaging operations. Dual redundancies are adapted where necessary in the system architecture design to increase reliability of the satellite system.</p>
+        </div>
+    </div>
+
+    <div class="space-item" data-aos="fade-up">
+        <div class="year">2019</div>
+        <div class="content">
+            <h3>Hazzaa AlMansoori's Spaceflight</h3>
+            <p>First Emirati astronaut journeys to the International Space Station 🌌</p>
+            <p>Hazzaa AlMansoori is an Emirati astronauts and the first person from the United Arab Emirates in space. In 2019, he embarked on the UAE's first scientific mission to the International Space Station (ISS). The mission carried the slogan 'Zayed's Ambition', making the UAE the 19th country worldwide, and the first country in the Arab region, to travel to the ISS. He also became the back-up astronaut for Sultan Al Neyadi for the UAE's second mission to the ISS, which is the longest Arab space mission. Previously, he was the UAE's youngest F-16 fighter pilot.</p>
+        </div>
+    </div>
+
+    <div class="space-item" data-aos="fade-up">
+        <div class="year">2020</div>
+        <div class="content">
+            <h3>Hope Probe</h3>
+            <p>Mission to Mars is launched, marking UAE’s entry into deep space exploration 🔴</p>
+            <p>The Emirates Mars Mission is a United Arab Emirates Space Agency uncrewed spac exploration mission to Mars. The Hope probe was launched on 20 July 2020, and went into orbit around Mars on 9 February 2021. The space probe will study daily and seasonal weather cycles, weather events in the lower atmosphere such as dust storms, and how the weather varies in different regions of the planet. It will also add to knowledge about Mars atmospheric hydrogen and oxygen loss and other possible reasons behind the planet's drastic climate changes. The mission is being carried out by a team of Emirati engineers in collaboration with foreign research institutions, and is a contribution towards a knowledge-based economy in the UAE.</p>
+        </div>
+    </div>
+
+
+
+    <div class="space-item" data-aos="fade-up">
+        <div class="year">2022</div>
+        <div class="content">
+            <h3>Rashid Lunar Rover Mission</h3>
+            <p>Plans for UAE’s first Moon rover exploration 🌕</p>
+            <p>The aim of the Emirates Lunar Mission is to develop a series of rovers to explore the surface of the moon in different locations with different science objectives. Each rover built under the Emirates Lunar Mission is named “Rashid” rover after the late Sheikh Rashid Bin Saeed Al Maktoum, builder of modern Dubai. Rashid 2 is the second rover within the Emirates Lunar that is designed, developed and built by MBRSC. With Rashid 2 mission, scientists will be able to study different aspects of the lunar surface such as the geological and thermal properties of the surface and dust and study the effectiveness and behaviour of different materials when interacting with the lunar surface. </p>
+        </div>
+    </div>
+
+</div>
+    <!-- Text-to-Speech Script -->
+    <script>
+        window.addEventListener('load', function () {
+            const msg = new SpeechSynthesisUtterance("From launching the Hope Probe to reaching Mars, the UAE has boldly risen among the stars, proving that no dream is too distant.");
+            msg.lang = "en-US";
+            msg.volume = 1;
+            msg.rate = 0.85;
+            msg.pitch = 1.0;
+
+            const voices = window.speechSynthesis.getVoices();
+            if (voices.length > 0) {
+                msg.voice = voices.find(v => v.name.includes('Google') || v.lang.includes('en')) || voices[0];
+            }
+
+            // Wait for voices to be loaded (if needed)
+            if (voices.length === 0) {
+                speechSynthesis.onvoiceschanged = () => speechSynthesis.speak(msg);
+            } else {
+                speechSynthesis.speak(msg);
+            }
+        });
+    </script>
+
+
+
+<!-- AOS Library -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true
+  });
+</script>
+
+</body>
+</html>

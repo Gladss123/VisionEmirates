@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heritage | Discover UAE</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='heritage.css') }}">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Fancy Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Scheherazade&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="dust-wave"></div>
+
+
+<div id="heritage-background"></div>
+
+<header class="heritage-header" data-aos="fade-down">
+  <h1>UAE Heritage — A Timeless Journey</h1>
+  <p>Step into the heart of traditions, culture, and ancient beauty.</p>
+</header>
+
+<section class="heritage-section" data-aos="fade-right">
+  <div class="heritage-content">
+    <h2>Pearl Diving 🐚</h2>
+    <p> Pearl diving was once the driving force of the UAE economy. It contributed massively to the UAE’s sustenance and was the major profession for most of the population. Although the industry collapsed by the early 1900s, the traces of this historical golden period, are still ingrained in the hearts of the people of the country. UAE’s two biggest cities – Dubai and Abu Dhabi- came into being because of the booming pearl industry of the country. Being home to pearling sites, they were regular destinations for pearl divers. To save their travelling time, they moved their families to these coastal towns and began living there. Soon others followed suit, and these destinations became home to many!</p>
+  </div>
+  <div class="heritage-image">
+    <img src="{{ url_for('static', filename='pearl-diving.jpg') }}" alt="Pearl Diving">
+  </div>
+</section>
+
+<section class="heritage-section" data-aos="fade-left">
+  <div class="heritage-content">
+    <h2>Falconry 🦅</h2>
+    <p>Falcons are a symbol of pride and nobility — a sacred bond between humans and nature. This traditional Emirati sport has been practised for more than 2,000 years, with skills being passed down through generations. Falconry requires patience and co-operation between the falconer and his bird. By treating his bird gently and with empathy, the falconer gains its trust and obedience. Emirati falconers developed special breeding and rearing methods over the years, and a falconry experience allows you to discover this ancient tradition in person. In his book, Falconry as a Sport – Our Arab Heritage, the late UAE founder, also known as the Father of the Nation, Sheikh Zayed Bin Sultan Al Nahyan, describes the essential techniques of catching these majestic birds.</p>
+  </div>
+  <div class="heritage-image">
+    <img src="{{ url_for('static', filename='falconry.jpg') }}" alt="Falconry Tradition">
+  </div>
+</section>
+
+<section class="heritage-section" data-aos="fade-right">
+  <div class="heritage-content">
+    <h2>Traditional Souks 🛍️</h2>
+    <p>Bustling markets full of fragrances, spices, gold, and stories whispered through the desert winds. The Souks and Markets of the UAE provide a fascinating glimpse into the rich Emirati culture. These vibrant street markets are filled with traditional garments, spices, perfumes, textiles, and gold. Ancient traditions and contemporary influences blend here for an experience that goes beyond the modern shopping malls. No matter whether you want to uncover hidden treasures at textile souks or indulge in local cuisine at bustling food stalls – there is something for everyone in the UAE’s traditional souks and markets. You’ll find an authentic taste of Emirati culture in Ras Al Khaimah’s souks. Filled with vibrant colors and enticing aromas, these bustling bazaars are a must-see for tourists.</p>
+  </div>
+  <div class="heritage-image">
+    <img src="{{ url_for('static', filename='souk.jpg') }}" alt="Traditional Souk">
+  </div>
+</section>
+
+<section class="heritage-section" data-aos="fade-left">
+  <div class="heritage-content">
+    <h2>Bedouin Life 🏕️</h2>
+    <p>Nomadic tribes roamed the vast desert, living in harmony with the harsh yet beautiful landscape. The history of the UAE is diverse and immersive, brimming with tales of nomadic Arabs, or Bedouins, who once inhabited the region. Known for their unique lifestyle and hardy resourcefulness, they are an intrinsic part of the region and its heritage. Here are some of the most fascinating facts about Bedouin life in the UAE. Archaeological evidence shows that Bedouin herders lived in the UAE, dwelling in a mangrove swamp area in Dubai between 2500 BCE and 3000 BCE. Back then, the community was into date palm cultivation. Famous for their honour, hospitality and courage, Bedouins survived water scarcity and other resources to create a life full of simple but beautiful traditions. For centuries, Bedouins moved from one place to another in the region in nomadic cycles to find water, fertile land and suitable weather conditions. </p>
+  </div>
+  <div class="heritage-image">
+    <img src="{{ url_for('static', filename='bedouin-life.jpg') }}" alt="Bedouin Tent">
+  </div>
+</section>
+
+<section class="heritage-section" data-aos="fade-right">
+  <div class="heritage-content">
+    <h2>Traditional Clothing 👳‍♂️🧕</h2>
+    <p>Traditional Clothing are styled according to what is to be worn during the day, at night and for religious occasions. The clothes are designed to adapt to the local hot weather and the religious beliefs of the region. Following is a list of the traditional clothing worn by men and women in the UAE:</p>
+    <p>  Abaya: The Abaya is a long elegant cloak worn by women in the UAE and is their national dress. Traditionally black in colour, it covers the whole body except the face, feet and hands. Some women prefer to team it up with the niqāb and Gafaaz to cover up the face and hands as well.</p>
+    <p>  Ghutrah: A typical headscarf worn by men, the ghutrah is also known by the name of keffiyeh/kufiya, or shemagh in other Arabic countries. Typically made from a square cloth of cotton in chequered patterns, it is draped over the head in various styles.</p>
+    <p>  Burqa: The Burqa or burkha, burka, burqua is an outer piece of clothing used to cover a woman’s body to prevent exposure of skin in public. The Burqa is removed when the woman returns home and/or in the sole company of her family members.</p>
+  </div>
+  <div class="heritage-image">
+    <img src="{{ url_for('static', filename='traditional-clothing.jpg') }}" alt="Traditional Clothing UAE">
+  </div>
+</section>
+
+<!-- AOS Animation Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true
+  });
+</script>
+<script>
+  for (let i = 0; i < 40; i++) {
+    const spark = document.createElement('div');
+    spark.classList.add('spark');
+    spark.style.left = Math.random() * 100 + 'vw';
+    spark.style.animationDuration = (5 + Math.random() * 5) + 's';
+    spark.style.animationDelay = (Math.random() * 5) + 's';
+    document.body.appendChild(spark);
+  }
+</script>
+
+<div id="start-journey" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#000000cc; color:white; display:flex; align-items:center; justify-content:center; flex-direction:column; z-index:9999;">
+  <h2>🌟 Begin Your Heritage Journey 🌟</h2>
+  <button class="golden-gate-button" id="start-btn" onclick="startJourney()">Start Journey</button>
+
+</div>
+
+<script>
+document.getElementById('start-btn').addEventListener('click', function() {
+    var startScreen = document.getElementById('start-journey');
+    startScreen.style.display = 'none'; // hide the overlay
+
+    var welcomeText = "Welcome, traveler, to the Heritage Sands. Let the whispers of the past guide you.";
+
+    function speakWelcome() {
+        var msg = new SpeechSynthesisUtterance(welcomeText);
+        msg.lang = "en-US";
+        msg.volume = 1;
+        msg.rate = 0.85;
+        msg.pitch = 1.0;
+
+        var voices = window.speechSynthesis.getVoices();
+        if (voices.length > 0) {
+            msg.voice = voices.find(voice => voice.name.includes('Google') || voice.lang.includes('en')) || voices[0];
+        }
+
+        msg.onend = function() {
+            console.log("Speech ended, starting background music!");
+            var music = document.getElementById('background-music');
+            music.volume = 0.4;
+            music.play();
+        };
+
+        window.speechSynthesis.speak(msg);
+    }
+
+    if (speechSynthesis.getVoices().length === 0) {
+        speechSynthesis.onvoiceschanged = speakWelcome;
+    } else {
+        speakWelcome();
+    }
+});
+</script>
+
+
+
+<div class="castle-horizon"></div>
+
+
+</body>
+</html>
+

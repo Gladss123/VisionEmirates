@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Achievements</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Stylish&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fefcfb;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.achievements {
+  background: url('/static/bgg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  padding: 60px 30px;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.achievements::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.15); /* was 0.3 – now even more translucent */
+  backdrop-filter: blur(2px);
+  z-index: 0;
+}
+
+
+.heading {
+  text-align: center;
+  font-family: 'Stylish', cursive;
+  font-size: 3.8rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #111; /* black */
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.5);
+  animation: fadeSlideDown 1.2s ease-in-out;
+  position: relative;
+  z-index: 2;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(180, 140, 70, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.8s ease both;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 14px 40px rgba(180, 140, 70, 0.35);
+}
+
+.card img {
+  width: 320px;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(1.1);
+}
+
+.card-content {
+  padding: 30px 35px;
+  background: rgba(255, 255, 255, 0.6); /* was 0.85 – more translucent now */
+  backdrop-filter: blur(5px);
+  border-left: 2px solid rgba(255, 220, 180, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeSlideDown {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+.card-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #b77c2a;
+  font-family: 'Stylish', cursive;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+  animation: fadeSlideDown 1s ease forwards;
+}
+
+.card-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .card img {
+    width: 100%;
+    height: 240px;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f4e9d8;
+}
+::-webkit-scrollbar-thumb {
+  background: #caa976;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a47d4e;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 5px #ffd700aa, 0 0 10px #ffd70099;
+  }
+  50% {
+    text-shadow: 0 0 10px #ffd700dd, 0 0 20px #ffd700cc;
+  }
+}
+
+.glow-heading {
+  animation: glowPulse 3s infinite ease-in-out;
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 10px #ffd700aa;
+  border: 1px solid #ffd700;
+  transition: 0.3s;
+}
+@keyframes slideFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card {
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #fceabb, #f8b500);
+  background-clip: padding-box;
+  z-index: -1;
+  animation: borderPulse 5s linear infinite;
+}
+
+@keyframes borderPulse {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.card-content {
+  animation: slideFade 1.2s ease forwards;
+}
+
+/* Fade in on scroll */
+.invisible {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+    </style>
+
+</head>
+<body>
+
+<section class="achievements">
+  <h1 class="heading">UAE's Achievements</h1>
+  <div class="cards">
+
+    <div class="card">
+        <img src="{{ url_for('static', filename='ecoo.jpg') }}" alt="Economic Growth of UAE">
+      <div class="card-content">
+        <h2>Economic Growth</h2>
+        <p>The UAE aims to double its GDP to over $800 billion by 2030 through robust economic reforms and diversification. The UAE, continues to focus on developing its position as a global hub for business and finance. The country has been actively seeking bilateral trade deals and partnerships to drive its economic goals. The UAE's commitment to economic growth is exemplified by its efforts to attract investments and strengthen its position in the global market. Through strategic partnerships and trade agreements, the UAE has become a global hub for business, trade and investment</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="{{ url_for('static', filename='tour.jpg') }}" alt="Tourism Excellence">
+      <div class="card-content">
+        <h2>Tourism Excellence</h2>
+        <p>Ranked #1 in the Middle East, the UAE continues to redefine tourism with world-class attractions and services.The UAE continues to maintain its regional and global leadership as an exceptional tourism destination and the best place to live and work in. In line with its wise leadership’s directives, the country’s tourism sector has showcased an excellent performance, confirming post-pandemic recovery and ushering in a new phase of prosperity and growth.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="{{ url_for('static', filename='expo.jpg') }}" alt="Expo 2020 Legacy">
+      <div class="card-content">
+        <h2>Expo 2020 Legacy</h2>
+        <p>Dubai’s Expo showcased innovations and drew 24M+ visitors, becoming a milestone in global collaboration. The Expo site featured 192 individual Country Pavilions that showcased the unique architecture and culture of their countries. Thematic Districts that reflected the three subthemes featured performance spaces, art installations, gardens and pavilions that house interactive exhibitions. Creating a legacy of sustainability has been at the core of Expo 2020 Dubai from the beginning. By integrating a variety of techniques and technologies across industries, Expo 2020 Dubai aims to be one of the greenest World Expos ever and sets a new benchmark for future World Expos. More than 80 percent of Expo 2020’s infrastructure is built to last and will transition into a human-centric smart city named District 2020.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="{{ url_for('static', filename='smart.jpg') }}" alt="Smart Cities in UAE">
+      <div class="card-content">
+        <h2>Smart Cities</h2>
+        <p>Driven by AI and green tech, UAE’s smart cities set a global benchmark for futuristic urban development. Abu Dhabi and Dubai have  have been ranked as the smartest cities in the Middle East and North Africa region.in the 'Smart City Index 2021'. The index, by the Institute for Management Development (IMD), in collaboration with Singapore University for Technology and Design (SUTD) surveys residents in ranked cities to assess smart infrastructure and services covering health and safety, mobility, activities, opportunities, and governance.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="{{ url_for('static', filename='culture.jpg') }}" alt="Cultural Heritage of UAE">
+      <div class="card-content">
+        <h2>Cultural Heritage</h2>
+        <p>Embracing tradition while moving forward, the UAE protects its identity through art, history, and education. The UAE is blessed with a rich heritage that encompasses architecture, sports, occupations, traditions, arts, crafts, food, places of historical and archaeological importance, lifestyle and values imbibed in Islam. Some of the distinct features of the UAE's heritage are hospitality, tolerance, family cohesion and solidarity among members of the society along with honour and pride associated with being part of this heritage.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="{{ url_for('static', filename='edu.jpg') }}" alt="Education Hub">
+      <div class="card-content">
+        <h2>Education Hub</h2>
+        <p>The UAE is evolving into a premier destination for higher education, innovation, and academic excellence. The United Arab Emirates (UAE) has emerged as a major global education hub in recent years. This is due to a number of factors, including the country’s strategic location, its commitment to quality education, and its attractive investment climate. United Arab Emirates (UAE) is an ambitious country that has transformed itself from a desert land into a modern and prosperous nation in just five decades. </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<script>
+  window.addEventListener('load', function () {
+    const msg = new SpeechSynthesisUtterance(
+      "Welcome to the UAE's achievements page. Explore how the nation is leading in economy, tourism, innovation, and education."
+    );
+    msg.lang = "en-US";
+    msg.rate = 0.9;
+    const voices = speechSynthesis.getVoices();
+    if (voices.length > 0) msg.voice = voices[0];
+    speechSynthesis.speak(msg);
+  });
+
+  // Fade in cards on scroll
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  cards.forEach(card => {
+    card.classList.add('invisible');
+    observer.observe(card);
+  });
+</script>
+
+<style>
+  .invisible {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+  }
+
+  .visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+</body>
+</html>
